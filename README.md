@@ -20,13 +20,26 @@ Please check the Installation guide's to know how you can install this local on 
 * you can install chilipeppr to your root server or raspberry pi
 * you need as additional Software just a webserver and a browser
 * use grep on your machine to find external cp code to develop your own widget
-* just call ````git submodule update --recursive```` and all modules are refreshed to the latest version
+* just call ````git submodule update --recursive --remote```` and all modules are refreshed to the latest version
 * possible to local test your brandnew alpha widget
 * 
 
 ### cons
 * you have to update your installation from time to time
 * i don't know :)
+
+## Raspberry installation
+* login via ssh to raspberry as user "pi"
+```
+cd /home/pi
+git clone --recursive https://github.com/xpix/chilipeppr.local
+sudo apt-get install nginx # install webserver
+sudo /etc/init.d/nginx start
+cd /var/www/html
+sudo ln -s /home/pi/chilipeppr.local .
+```
+* call chilipepper on your raspberry in a browser: http://127.0.0.1/chilipeppr.local/workspace_tinyg.html
+
 
 ## Windows installation
 * install [mongoose](https://www.cesanta.com/products/binary) and [git-bash](https://git-for-windows.github.io/) for windows
